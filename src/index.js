@@ -37,3 +37,11 @@ const wrap = type => str => `<${type}>${str}</${type}>`;
 const transformPipeCurry = pipe(trim, toLowerCase, wrap('span'));
 const resultPipedCurry = transformPipeCurry(input);
 console.log({resultPipedCurry});
+
+// Updating object properties
+
+const person = { name: 'John' };
+const updated = Object.assign({}, person, { name: 'Bob'});
+console.log({updated});
+const updateSpread = { ...person, name: 'Bob' };
+console.log({updateSpread});
