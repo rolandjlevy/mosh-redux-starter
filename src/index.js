@@ -32,6 +32,7 @@ const resultPiped = transformPipe(input);
 console.log({resultPiped});
 
 // use currying
+
 const wrap = type => str => `<${type}>${str}</${type}>`;
 
 const transformPipeCurry = pipe(trim, toLowerCase, wrap('span'));
@@ -45,3 +46,6 @@ const updated = Object.assign({}, person, { name: 'Bob'});
 console.log({updated});
 const updateSpread = { ...person, name: 'Bob' };
 console.log({updateSpread});
+
+// Immutable.js and Immer library for immutable data structures
+
