@@ -1,6 +1,10 @@
 import store from './store';
-import * as actions from './actionTypes';
-import { bugAdded, bugRemoved } from './actions'
+
+import { 
+  bugAdded, 
+  bugRemoved,
+  bugResolved
+ } from './actions'
 
 // This gets called every time the state of the store changes
 // UI components subscribe to the store so they get notofied when the store's state changes
@@ -12,7 +16,9 @@ const unsubscribe = store.subscribe(() => {
 // Then all the subscribers get notified
 store.dispatch(bugAdded('This is bug 1'));
 
-unsubscribe();
+// unsubscribe();
+
+store.dispatch(bugResolved(1));
 
 store.dispatch(bugRemoved(1));
 
