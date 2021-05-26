@@ -2,7 +2,7 @@
 // import * as actions from './store/actions';
 
 import configureStore from './store/bugs-configureStore';
-import * as actions from './store/bugs-with-dux-pattern';
+import * as actions from './store/bugs-with-dux-and-toolkit';
 
 const store = configureStore();
 
@@ -15,11 +15,11 @@ const unsubscribe = store.subscribe(() => {
 // When we dispatch an action our store calls a reducer which returns the updated state
 // Then all the subscribers get notified
 
-store.dispatch(actions.bugAdded('This is bug 1'));
-store.dispatch(actions.bugAdded('This is bug 2'));
-store.dispatch(actions.bugAdded('This is bug 3'));
-store.dispatch(actions.bugResolved(1));
-store.dispatch(actions.bugRemoved(2));
+store.dispatch(actions.bugAdded({ description: 'This is bug 1' }));
+store.dispatch(actions.bugAdded({ description: 'This is bug 2' }));
+store.dispatch(actions.bugAdded({ description: 'This is bug 3' }));
+store.dispatch(actions.bugResolved({ id: 1 }));
+store.dispatch(actions.bugRemoved({ id: 2 }));
 
 // unsubscribe();
 
