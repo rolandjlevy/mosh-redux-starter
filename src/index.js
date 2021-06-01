@@ -15,9 +15,9 @@ const unsubscribe = store.subscribe(() => {
 // When we dispatch an action our store calls a reducer which returns the updated state
 // Then all the subscribers get notified
 
-store.dispatch(actions.bugAdded({ description: 'This is bug 1' }));
-store.dispatch(actions.bugAdded({ description: 'This is bug 2' }));
-store.dispatch(actions.bugAdded({ description: 'This is bug 3' }));
+store.dispatch(actions.bugAdded({ description: 'This is bug no 1' }));
+store.dispatch(actions.bugAdded({ description: 'This is bug no 2' }));
+store.dispatch(actions.bugAdded({ description: 'This is bug no 3' }));
 store.dispatch(actions.bugResolved({ id: 1 }));
 store.dispatch(actions.bugRemoved({ id: 2 }));
 
